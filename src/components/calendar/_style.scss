@@ -1,0 +1,122 @@
+.__mwd-calendar-wrapper {
+
+    .__mwd-input-basic {
+        width: 300px;
+        padding: 16px;
+        font-size: 1.2em;
+        color: #292929;
+        border: none;
+        outline: none;
+
+        &:focus,
+        &:active {
+            border: none;
+            outline:none;
+        }
+
+    }
+
+    .__mwd-calendar{
+        background: linear-gradient(180deg, #520093 0%, #4C0087 100%);
+        box-shadow: 0px 4px 9px 4px rgba(0, 0, 0, 0.25);
+        padding: 16px;
+        position: absolute;
+
+        .__mwd-calendar-header {
+            min-width: 412px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 14px;
+
+            .month-year-names {
+                font-size: 1.5em;
+                letter-spacing:1px;
+                color:  #DADADA;
+                cursor: pointer;
+            }
+
+            >.arrow-prev,
+            >.arrow-next {
+                width: 0; 
+                height: 0; 
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                cursor: pointer;
+            }
+
+            >.arrow-prev {
+                border-right:15px solid  #EFEFEF;
+                transition: .3s ease;
+                
+
+                &:hover {
+                    border-right:15px solid #b1b1b1;
+                    transition: .3s ease;
+                }
+            }
+
+            >.arrow-next {
+                border-left:15px solid  #EFEFEF;
+
+                &:hover {
+                    border-left:15px solid #b1b1b1;
+                    transition: .3s ease;
+                }
+            }
+        }
+
+        .__mwd-weeknames {
+            display:grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-gap: 2px;
+            height:40px;
+            font-size:.8em;
+            color: white;
+            opacity: 79%;
+
+            .mwd-weekname {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .__mwd-calendar-month {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-gap: 5px;
+        
+            .__mwd-calendar-day {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+                user-select: none;
+                cursor: pointer;
+                color:  #EAE6E1;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+
+                &.selected {
+                    border: 1px solid #bdbdbd;
+                }
+
+                &.today {
+                    background-color:#EAE6E1;
+                    color:#535353;
+                    font-weight: bold;
+                    border-radius: 50%;
+                }
+
+                &.before {
+                    color: rgba(255, 255, 255, 0.32);
+                }
+            }
+            
+        }
+    }
+        
+}
